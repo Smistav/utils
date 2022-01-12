@@ -1,12 +1,14 @@
-import s from './app.module.scss'
 import { useState } from 'react'
+import s from './app.module.scss'
 import Modal from './components/modal/modal'
 
-const App = () => {
+function App() {
   const [open, setOpen] = useState(false)
   return (
     <div className={s.component}>
-      <button onClick={() => setOpen(!open)}>Open window</button>
+      <button type='button' onClick={() => setOpen(!open)}>
+        Open window
+      </button>
       <Modal open={open} onClose={() => setOpen(false)} />
     </div>
   )

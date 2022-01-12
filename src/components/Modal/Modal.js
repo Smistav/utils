@@ -1,10 +1,11 @@
+import ClassNames from 'classnames'
+import { useRef } from 'react'
+import PropTypes from 'prop-types'
 import CloseIcon from './image/closeIcon'
 import Checkbox from '../checkbox/checkbox'
-import ClassNames from 'classnames'
 import s from './modal.module.scss'
-import { useRef } from 'react'
 
-const Modal = ({ open, onClose }) => {
+function Modal({ open, onClose }) {
   const modal = useRef(null)
   const onClickClose = (evt) => {
     if (modal.current === evt.target) {
@@ -15,14 +16,25 @@ const Modal = ({ open, onClose }) => {
   const modalClassName = ClassNames(s.modal, open && s.modal__open)
 
   return (
-    <div className={wrapperClassName} onClick={onClickClose} ref={modal}>
+    <div
+      className={wrapperClassName}
+      role='button'
+      tabIndex='0'
+      onClick={onClickClose}
+      onKeyDown={onClickClose}
+      ref={modal}
+    >
       <div className={modalClassName}>
-        <button className={s.modal__close} onClick={onClose}>
+        <button type='button' className={s.modal__close} onClick={onClose}>
           <CloseIcon />
         </button>
         <Checkbox />
       </div>
     </div>
   )
+}
+Modal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 }
 export default Modal

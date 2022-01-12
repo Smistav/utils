@@ -1,6 +1,6 @@
 import s from './checkbox.module.scss'
 
-const Checkbox = () => {
+function Checkbox() {
   return (
     <div className={s.component}>
       <input type='checkbox' id='checkbox' />

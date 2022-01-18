@@ -1,19 +1,23 @@
 import ClassNames from 'classnames'
 import { useRef } from 'react'
-import PropTypes from 'prop-types'
+import { useDispatch, useSelector } from 'react-redux'
+
+import {close} from '../../store/slice/modalSlice'
+import s from './modal.module.scss'
 import CloseIcon from './image/closeIcon'
 import Checkbox from '../checkbox/checkbox'
-import s from './modal.module.scss'
 
-function Modal({ open, onClose }) {
+function Modal() {
   const modal = useRef(null)
+  const {isOpen}=useSelector(state=>state.modal)
+  const dispatch=useDispatch()
   const onClickClose = (evt) => {
     if (modal.current === evt.target) {
-      onClose()
+      dispatch(close())
     }
   }
-  const wrapperClassName = ClassNames(s.wrapper, open && s.wrapper__open)
-  const modalClassName = ClassNames(s.modal, open && s.modal__open)
+  const wrapperClassName = ClassNames(s.wrapper, isOpen && s.wrapper__open)
+  const modalClassName = ClassNames(s.modal, isOpen && s.modal__open)
 
   return (
     <div
@@ -25,7 +29,7 @@ function Modal({ open, onClose }) {
       ref={modal}
     >
       <div className={modalClassName}>
-        <button type='button' className={s.modal__close} onClick={onClose}>
+        <button type='button' className={s.modal__close} onClick={()=>dispatch(close())}>
           <CloseIcon />
         </button>
         <Checkbox />
@@ -33,8 +37,5 @@ function Modal({ open, onClose }) {
     </div>
   )
 }
-Modal.propTypes = {
-  open: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-}
+
 export default Modal

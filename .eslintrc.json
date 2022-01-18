@@ -6,13 +6,12 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "airbnb",
     "plugin:import/recommended",
-    "prettier",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -38,6 +37,13 @@
         "required": {
           "some": ["nesting", "id"]
         }
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state"]
       }
     ]
   }

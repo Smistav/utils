@@ -1,16 +1,15 @@
 import ClassNames from 'classnames'
 import { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
-import {close} from '../../store/slice/modalSlice'
-import s from './modal.module.scss'
+import { close } from 'store/slice/modalSlice'
+import Checkbox from 'components/checkbox/checkbox'
 import CloseIcon from './image/closeIcon'
-import Checkbox from '../checkbox/checkbox'
+import s from './modal.module.scss'
 
 function Modal() {
   const modal = useRef(null)
-  const {isOpen}=useSelector(state=>state.modal)
-  const dispatch=useDispatch()
+  const { isOpen } = useSelector((state) => state.modal)
+  const dispatch = useDispatch()
   const onClickClose = (evt) => {
     if (modal.current === evt.target) {
       dispatch(close())
@@ -29,7 +28,7 @@ function Modal() {
       ref={modal}
     >
       <div className={modalClassName}>
-        <button type='button' className={s.modal__close} onClick={()=>dispatch(close())}>
+        <button type='button' className={s.modal__close} onClick={() => dispatch(close())}>
           <CloseIcon />
         </button>
         <Checkbox />

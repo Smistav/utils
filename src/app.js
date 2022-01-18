@@ -1,10 +1,10 @@
-import { useDispatch} from 'react-redux'
-import s from './app.module.scss'
-import Modal from './components/modal/modal'
-import {open} from './store/slice/modalSlice'
+import { useDispatch } from 'react-redux'
+import Modal from 'components/modal/modal'
+import { open } from 'store/slice/modalSlice'
+import s from 'app.module.scss'
 
 function App() {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
   return (
     <div className={s.component}>
       <button type='button' onClick={() => dispatch(open())}>

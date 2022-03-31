@@ -1,6 +1,6 @@
 import s from './checkbox.module.scss'
 
-function Checkbox() {
+export const Checkbox = () => {
   return (
     <div className={s.component}>
       <input type='checkbox' id='checkbox' />
@@ -8,5 +8,3 @@ function Checkbox() {
     </div>
   )
 }
-
-export default Checkbox

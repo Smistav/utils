@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, useCallback } from 'react'
 
 export const usePhoneMask = (initialValues: string) => {
   const [isError, setError] = useState('')
-  let ref = useRef<HTMLInputElement>(null)
+  const ref = useRef<HTMLInputElement>(null)
   const errorLength = 'остановитесь'
   const errorNumber = 'нужна цифра'
   const onChange = useCallback(() => {

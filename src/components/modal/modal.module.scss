@@ -15,6 +15,8 @@
 }
 .modal {
   width: 511px;
+  align-items: center;
+  flex-direction: column;
   padding: 40px 65px;
   background: #ffffff;
   border-radius: 5px;
@@ -25,7 +27,7 @@
   display: none;
 
   &__open {
-    display: block;
+    display: flex;
   }
   &__close {
     position: absolute;
@@ -36,4 +38,22 @@
       transform: rotate(180deg);
     }
   }
+}
+.blockButton {
+  margin-top: 50px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.primary {
+  background-color: #6161f8;
+  color: white;
+  padding: 15px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.fontH3Button {
+  font-size: 20px;
+  line-height: 25px;
 }

@@ -1,0 +1,13 @@
+.component {
+  padding: 10px;
+  background-color: #969393;
+  opacity: 0.6;
+  color: black;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  &:hover {
+    opacity: 1;
+  }
+}

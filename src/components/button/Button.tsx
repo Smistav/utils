@@ -9,7 +9,7 @@ type ButtonProps = {
   classes?: string[]
   onClick?: (evt: React.MouseEvent<HTMLElement>) => void
   ref?: React.RefObject<HTMLButtonElement>
-  type: ButtonType
+  type?: ButtonType
 }
 export const Button = React.memo(({ children, classes, onClick, type, ref }: ButtonProps) => {
   return (

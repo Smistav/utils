@@ -1,0 +1,28 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 36px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(124, 124, 124, 0.75);
+}
+.container {
+  position: relative;
+  width: 200px;
+  border-radius: 16px;
+  height: 200px;
+  background-color: #f8f8f8;
+}
